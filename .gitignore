@@ -1,0 +1,17 @@
+node_modules/
+*.log
+.DS_Store
+
+# Never commit real secrets, even in test fixtures under this repo.
+# (Example templates are named .credentials.example.* and are NOT matched by these.)
+**/.credentials.yaml
+**/.credentials.yml
+**/.credentials.json
+
+# SonarQube scanner working dir (if connectors are exercised locally).
+.scannerwork/
+
+# Demo/project state lives under ./forge (config, artifacts, versions, state.json, and the
+# gitignored .credentials.yaml). It is a *user project's* forge state, not part of the
+# plugin — never publish it in the marketplace repo.
+/forge/

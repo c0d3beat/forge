@@ -1,0 +1,8 @@
+{
+  "name": "forge",
+  "version": "0.0.1",
+  "description": "OpenSpec-style, approval-gated spec-driven-development: 7 artifact phases published to Confluence, stories to JIRA, code shipped as GitHub PRs gated by SonarQube SAST. No MCP — uses gh + zero-dependency Node REST connectors.",
+  "author": { "name": "widyanto.adinugroho" },
+  "keywords": ["sdd", "spec-driven-development", "confluence", "jira", "sonarqube", "github", "workflow"],
+  "license": "MIT"
+}

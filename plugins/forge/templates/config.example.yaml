@@ -1,0 +1,52 @@
+# forge config — copy to <your-project>/forge/config.yaml and edit.
+# Safe to COMMIT (no secrets). Secrets go in forge/.credentials.yaml (gitignored).
+# YAML subset: nested maps + scalars + comments. Quote values containing a
+# leading ':' or '#'. (config.json / config.yml are also accepted.)
+
+project:
+  name: My Project
+  # Page that the 7 artifact pages are created under; null = space root.
+  confluenceParentPageId: null
+
+confluence:
+  # baseUrl MUST end with /wiki for Atlassian Cloud.
+  baseUrl: https://YOUR-SITE.atlassian.net/wiki
+  # The space KEY (e.g. HAT), not its display name.
+  spaceKey: SPACEKEY
+  parentPageId: null
+
+jira:
+  baseUrl: https://YOUR-SITE.atlassian.net
+  projectKey: PROJ
+  issueType: Story
+  epicIssueType: Epic
+  # statusNames MUST match your workflow's EXACT status names.
+  statusNames:
+    todo: To Do
+    inProgress: In Progress
+    inReview: In Review
+    done: Done
+  # Optional custom-field IDs (e.g. customfield_10016). Leave "" to skip.
+  # Modern/team-managed projects link stories to epics via parent -> leave epicLinkField "".
+  storyPointsField: ""
+  epicLinkField: ""
+  epicNameField: ""
+
+github:
+  # 'owner/repo'. Auth uses the gh CLI (gh auth login) — no token needed here.
+  repo: owner/repo
+
+sonarqube:
+  # Podman-hosted SonarQube base URL.
+  url: http://localhost:9000
+  projectKey: my-project
+
+approval:
+  # Confluence labels that gate phase progression.
+  # approvedLabel present  => phase approved (advance).
+  # changesLabel (or any footer comment) => revise and re-publish.
+  approvedLabel: forge-approved
+  changesLabel: forge-changes-requested
+
+# Minimum confidence (0-100) a phase must reach before it can be published.
+confidenceThreshold: 90

@@ -1,0 +1,11 @@
+{
+  "name": "forge-marketplace",
+  "owner": { "name": "widyanto.adinugroho" },
+  "plugins": [
+    {
+      "name": "forge",
+      "source": "./plugins/forge",
+      "description": "Approval-gated spec-driven-development workflow across Confluence, JIRA, GitHub, and SonarQube — no MCP."
+    }
+  ]
+}
